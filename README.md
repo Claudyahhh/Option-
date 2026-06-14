@@ -8,6 +8,14 @@ Option maps your hormonal cycle to a daily strategic briefing, so you deploy the
 
 ---
 
+## Use Option Online
+
+Open the web app: **[option-livid.vercel.app](https://option-livid.vercel.app)**
+
+No installation or GitHub account is required.
+
+---
+
 ## What It Does
 
 Option models your hormone curve (estrogen, progesterone, testosterone) from two inputs — your last period date and average cycle length — and generates a daily briefing across four performance pillars:
@@ -28,7 +36,9 @@ The four cycle phases each carry a distinct operational profile:
 
 ---
 
-## Run Locally
+## For Developers
+
+To run Option locally:
 
 **Prerequisites:** Node.js, a [Gemini API key](https://aistudio.google.com/app/apikey)
 
@@ -41,7 +51,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open `http://localhost:5173` in your browser.
+Open `http://localhost:3000` in your browser.
 
 ---
 
