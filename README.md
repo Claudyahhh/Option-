@@ -1,70 +1,106 @@
-# Option — Hormonal Leverage for High-Performance Women
+# Option（杠杆）
 
-> Your cycle is not a liability. It is a precision instrument.
+**把女性生理周期从需要应对的障碍，转化为可以精准使用的生产力杠杆。**
 
-Most period trackers treat women as victims of their hormones — built around managing discomfort. **Option operates on a different premise: you are the operator of your own biology.**
+[直接使用网页版](https://option-livid.vercel.app)
 
-Option maps your hormonal cycle to a daily strategic briefing, so you deploy the right effort at the highest-leverage moment — and stop working against your own physiology.
-
----
-
-## Use Option Online
-
-Open the web app: **[option-livid.vercel.app](https://option-livid.vercel.app)**
-
-No installation or GitHub account is required.
+无需安装、无需 GitHub 账号、无需 API Key。
 
 ---
 
-## What It Does
+## 核心理念
 
-Option models your hormone curve (estrogen, progesterone, testosterone) from two inputs — your last period date and average cycle length — and generates a daily briefing across four performance pillars:
+大多数周期产品的叙事核心是记录症状、预测经期与缓解不适。Option 采用另一套底层叙事：
 
-- **Energy & Work** — cognitive bandwidth, persuasion windows, deep focus periods
-- **Training** — when to push for PRs, when to prioritize recovery
-- **Skin** — offensive vs. defensive skincare phases
-- **Mood & Strategy** — when to negotiate, when to plan, when to rest
+> **女性不是激素的受害者，而是自身激素的主人。**
 
-The four cycle phases each carry a distinct operational profile:
+雌激素、孕酮和睾酮在不同周期阶段的变化，会影响认知带宽、表达与决策能力、训练表现、代谢效率以及皮肤状态。
 
-| Phase | Window | Edge |
+Option 将这些变化转化为一份每日「战前简报（Briefing）」：告诉用户今天的优势在哪里、适合执行什么、应该避免什么，以及如何把重要任务安排在杠杆倍数更高的时间窗口。
+
+Option 不提供空洞的情绪安抚，只提供克制、专业、可执行的策略建议。
+
+## 为谁而做
+
+- **高成就动机女性**：希望更精准地管理时间、精力与高价值任务。
+- **理性主义者**：厌恶模糊安慰，更重视生物学背景与行动指令。
+- **生物极客（Bio-hackers）**：希望理解身体节律，并据此优化工作与身体表现。
+- **核心切入场景**：精力管理、体重与代谢管理、皮肤表现管理。
+
+## MVP 如何工作
+
+Option 当前采用理论激素坐标模拟模型，不要求用户持续采集基础体温或进行激素检测。
+
+用户输入所在城市、最近一次月经首日和平均周期长度后，系统即可生成个人周期坐标，并将每一天映射到四个行动阶段：
+
+| 阶段 | 核心状态 | 适合部署的行动 |
 |---|---|---|
-| **RISE** | Follicular | Absorption, learning, new inputs |
-| **PEAK** | Ovulation | Persuasion, confidence, max output |
-| **FOCUS** | Early luteal | Deep work, precision, sustained attention |
-| **RESET** | Late luteal / Menstrual | Pattern recognition, strategic clarity |
+| **RISE** | 雌激素上升，学习与恢复能力增强 | 输入新知识、启动项目、提高训练强度 |
+| **PEAK** | 雌激素与睾酮接近峰值 | 谈判、演讲、社交与高难度输出 |
+| **FOCUS** | 孕酮上升，持续专注能力增强 | 深度工作、细节执行、营养与恢复管理 |
+| **RESET** | 激素进入低位，身体重新校准 | 战略复盘、筛选决策、低负荷恢复 |
 
----
+### 橡皮筋伸缩算法
 
-## For Developers
+针对非标准 28 天周期，Option 不会把整条曲线简单等比例拉伸。
 
-To run Option locally:
+系统固定相对稳定的黄体期窗口，主要动态调整卵泡期长度，使不同周期长度下的阶段划分更接近真实生理结构。
 
-**Prerequisites:** Node.js, a [Gemini API key](https://aistudio.google.com/app/apikey)
+### 零数据启动
+
+MVP 优先降低启动成本。用户不需要先积累数周数据，当天即可获得第一份策略报告；后续记录用于逐步校准个人基线。
+
+## 三大效能支柱
+
+### 精力与工作流管理
+
+根据周期阶段匹配认知任务，识别学习、表达、谈判、深度工作和战略复盘的优势窗口。
+
+### 体重与代谢管理
+
+结合不同阶段的训练承受力、食欲与代谢变化，提供训练和营养策略，拒绝脱离生理节律的盲目节食。
+
+### 皮肤表现管理
+
+根据皮脂分泌与皮肤屏障变化，在进攻型护肤和防守型修复之间切换。
+
+## 当前功能
+
+- **每日策略 Briefing**：展示周期位置、激素趋势、今日优势与行动指令。
+- **月度作战地图**：查看整月阶段分布，提前识别高产窗口。
+- **任务杠杆匹配器**：将待办任务匹配到更适合执行的周期阶段。
+- **本地天气上下文**：通过 Open-Meteo 获取温度、体感温度与湿度。
+- **中英文界面**：支持 English / 中文切换。
+- **本地数据存储**：个人周期数据保存在浏览器 `localStorage` 中。
+
+## 本地开发
+
+**环境要求：** Node.js
 
 ```bash
 git clone https://github.com/Claudyahhh/Option-.git
 cd Option-
 npm install
-cp .env.example .env.local
-# Add your GEMINI_API_KEY to .env.local
 npm run dev
 ```
 
-Open `http://localhost:3000` in your browser.
+打开 [http://localhost:3000](http://localhost:3000)。
 
----
+## 技术栈
 
-## Tech Stack
-
-- **Vite** + **React** + **TypeScript**
-- **Gemini API** for dynamic content generation
-- Zero external UI libraries — custom CSS only
-
----
+- React 19
+- TypeScript
+- Vite
+- Motion
+- Open-Meteo API
+- `localStorage`
 
 ## Roadmap
 
-- **MVP (current)** — Theoretical hormone simulation engine + daily dynamic briefing
-- **v2** — Lightweight calibration layer (daily energy slider, ovulation check)
-- **v3** — External biometric data integration, partner collaboration view
+1. **MVP（当前）**：周期长度理论模拟引擎、每日动态策略、月度作战地图与任务匹配。
+2. **轻量校准**：接入每日精力反馈和排卵排查问卷，优化非标准周期模拟。
+3. **体征数据**：对接外部可穿戴设备与生物体征数据，并探索伴侣协作视图。
+
+## 免责声明
+
+Option 提供周期规划与生活方式参考，不构成医疗诊断或治疗建议。周期异常、持续疼痛或其他健康问题应咨询专业医疗人员。
